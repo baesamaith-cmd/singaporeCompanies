@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "npx vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "cd app && vite",
+    "build": "cd app && npx vite build",
+    "lint": "cd app && eslint .",
+    "preview": "cd app && vite preview"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.8",
