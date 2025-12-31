@@ -6,14 +6,6 @@ const ONEMAP_TOKEN = import.meta.env.VITE_ONEMAP_TOKEN; // Assuming this environ
 console.log('OneMap Token:', ONEMAP_TOKEN ? 'Token is set' : 'Token is NOT set');
 console.log('OneMap Token value:', ONEMAP_TOKEN);
 
-interface OneMapLatLngResponse {
-  data: Array<{
-    LATITUDE: string;
-    LONGITUDE: string;
-    // other fields might be present but not needed
-  }>;
-}
-
 export async function getLatLngFromPostalCode(postalCode: number): Promise<[number, number] | null> {
   if (!ONEMAP_TOKEN) {
     console.error('OneMap API token is not set. Please ensure VITE_ONEMAP_TOKEN is in your .env file.');

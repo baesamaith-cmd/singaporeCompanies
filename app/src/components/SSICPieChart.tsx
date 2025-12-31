@@ -10,7 +10,6 @@ interface SSICPieChartProps {
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8'];
 
 const SSICPieChart: React.FC<SSICPieChartProps> = ({ entities }) => {
-  const total = entities.length;
   const data = _.chain(entities)
     .groupBy((e) => e.primary_ssic_code?.toString() || 'Unknown')
     .map((group, ssic) => ({
@@ -36,7 +35,7 @@ const SSICPieChart: React.FC<SSICPieChartProps> = ({ entities }) => {
             fill="#8884d8"
             dataKey="value"
           >
-            {data.map((entry, index) => (
+            {data.map((_, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>
