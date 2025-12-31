@@ -1,6 +1,6 @@
 [build]
-  command = "npm run build"
-  publish = "dist"
+  command = "cd app && npm run build"
+  publish = "app/dist"
   
 [build.environment]
   # Add any build-time environment variables here
